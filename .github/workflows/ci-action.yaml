@@ -19,9 +19,6 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Migrate DB
-      run: npx prisma migrate deploy
-
     - name: Set up environment variables
       run: echo "RAILWAY_TOKEN=${{ secrets.RAILWAY_TOKEN }}" >> $GITHUB_ENV
 
@@ -30,3 +27,6 @@ jobs:
         RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
       run: |
         railway up --service Challenge_Chapter_6
+
+    - name: Migrate DB
+      run: npx prisma migrate deploy
