@@ -8,5 +8,6 @@ const imageCheck = storage.cloud(['image/png', 'image/jpg', 'image/jpeg']).singl
 router.post('/create', imageCheck, postController.createPost);
 router.get('/getAll', postController.getAllPosts);
 router.get('/getOne/:id', postController.getOnePost);
+router.delete('/delete/:id', postController.deletePost);
 
 module.exports = router;

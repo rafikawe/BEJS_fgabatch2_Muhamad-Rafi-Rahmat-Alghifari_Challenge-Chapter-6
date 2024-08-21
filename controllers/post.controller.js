@@ -63,8 +63,29 @@ async function getOnePost(req, res) {
 	}
 }
 
+async function deletePost(req, res) {
+	const id = req.params.id;
+
+	try {
+		const post = await postService.deletePost(id);
+		res.status(200).json({
+			status: true,
+			message: "Post deleted successfully",		
+			post: post
+		});
+	}
+	catch (err) {
+		console.log(err);
+		res.status(500).json({
+			status: false,
+			message: "Something went wrong in server"
+		});
+	}
+}
+
 module.exports = {
     createPost,
 	getAllPosts,
-	getOnePost
+	getOnePost,
+	deletePost
 }

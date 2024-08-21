@@ -1,12 +1,13 @@
 const prisma = require('../config/prisma.conf');
 
-async function createPost(title, description, image_url){
+async function createPost(title, description, image_url, file_id){
     try{
         const post = await prisma.post.create({
             data: {
                 title: title,
                 description: description,
-                image_url: image_url
+                image_url: image_url,
+                file_id: file_id
             }
         });
         return post;
@@ -37,8 +38,22 @@ async function getOnePost(id){
     }
 }
 
+async function deletePost(id){
+    try{
+        const post = await prisma.post.delete({
+            where: {
+                id: id
+            }
+        });
+        return post;
+    }catch(err){        
+        throw err;
+    }
+}
+
 module.exports = {
     createPost,
     getAllPosts,
-    getOnePost
+    getOnePost,
+    deletePost
 }

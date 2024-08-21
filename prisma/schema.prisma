@@ -19,6 +19,7 @@ model Post {
   id String @id @default(cuid())
   title String
   description String?
-  image_url String 
+  image_url String
+  file_id String
 }
 
