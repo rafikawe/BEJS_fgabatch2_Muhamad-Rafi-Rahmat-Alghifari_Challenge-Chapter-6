@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start:dev": "nodemon ./bin/www",
-    "start": "node ./bin/www"
+    "start": "npx prisma generate && node ./bin/www"
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
