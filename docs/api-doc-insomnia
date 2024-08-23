@@ -1,0 +1,195 @@
+_type: export
+__export_format: 4
+__export_date: 2024-08-23T09:59:46.011Z
+__export_source: insomnia.desktop.app:v9.3.3
+resources:
+  - _id: req_199de6505c564971816e0a2a261e6a64
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1724248706537
+    created: 1724236901514
+    url: challenge6-production-a259.up.railway.app/api/v1/post/getAll
+    name: Get All Posts
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+    authentication: {}
+    metaSortKey: -1724236901514
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    parentId: null
+    modified: 1723719273499
+    created: 1723719262555
+    name: Chapter 6 Binar FGA
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_f89a4c0afed04ce5ab1870341d6615f5
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1724406158725
+    created: 1724237176921
+    url: challenge6-production-a259.up.railway.app/api/v1/post/getOne/cm03zmt4o00012cs8ravvmakw
+    name: Get One Posts
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+    authentication: {}
+    metaSortKey: -1723978089561
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_6b08e1a83143410298a7fdbb6e9eef3a
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1724248745475
+    created: 1724239932773
+    url: challenge6-production-a259.up.railway.app/api/v1/post/delete/cm03x25jz00002cs8ttj6jg53
+    name: Delete Post
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/9.3.3
+        id: pair_c5b89053178e4440a7fa7633a25cfa98
+      - id: pair_564b290abd214c33ae33325deb41be4e
+        name: Authorization
+        value: "Basic "
+        description: ""
+        disabled: false
+    authentication:
+      type: none
+    metaSortKey: -1723848683584.5
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b06511dd6cf3407e9723bcee704f4adc
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1724407086364
+    created: 1724405989401
+    url: challenge6-production-a259.up.railway.app/api/v1/post/update/cm03zmt4o00012cs8ravvmakw
+    name: Update Post
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"title": "coba",
+        	"description": "coba"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/9.3.3
+        id: pair_c5b89053178e4440a7fa7633a25cfa98
+      - id: pair_564b290abd214c33ae33325deb41be4e
+        name: Authorization
+        value: "Basic "
+        description: ""
+        disabled: false
+    authentication:
+      type: none
+    metaSortKey: -1723783980596.25
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_31d7d5e91dd94a7b9ed59d5015fb9e74
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1724405922641
+    created: 1723719277607
+    url: challenge6-production-a259.up.railway.app/api/v1/post/create
+    name: Create Post
+    description: ""
+    method: POST
+    body:
+      mimeType: multipart/form-data
+      params:
+        - id: pair_9ac5ebe2c7e444d18336abf05f3a4a5a
+          name: image
+          value: ""
+          description: ""
+          disabled: false
+          type: file
+          fileName: C:\Users\Rafi Alghifari\Downloads\Merah Putih Minimalis Hari Veteran
+            Nasional Konten Instagram.png
+        - id: pair_ddca2201965643f69ab72fbba3e98bb6
+          name: title
+          value: Merdeka
+          description: ""
+          disabled: false
+        - id: pair_6e37831f78fa4d6fb0e2c97d438ea3b4
+          name: description
+          value: Hari Kemerdekaan Republik Indonesia
+          description: ""
+          disabled: false
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: multipart/form-data
+      - name: User-Agent
+        value: insomnia/9.3.3
+    authentication: {}
+    metaSortKey: -1723719277608
+    isPrivate: false
+    pathParameters: []
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_ad378c7e9ff412cfe2fe08b3679e37438b9ed51b
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1723719262561
+    created: 1723719262561
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1723719262561
+    _type: environment
+  - _id: jar_ad378c7e9ff412cfe2fe08b3679e37438b9ed51b
+    parentId: wrk_ab6f7fc1cde2491eb055aa74c88f24a8
+    modified: 1723719262565
+    created: 1723719262565
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar

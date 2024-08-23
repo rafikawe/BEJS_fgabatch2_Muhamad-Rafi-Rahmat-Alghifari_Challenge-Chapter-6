@@ -1,13 +1,60 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <title>Express</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Welcome Page</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #3498db;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .container a:hover {
+      background-color: #2980b9;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
+  <div class="container">
+    <h1>Welcome to the Simple Image Upload API</h1>
+    <p>This API provides CRUD operations for managing image uploads with ImageKit. It's designed to handle file validation using Multer and ensures that only valid images are uploaded to the cloud. The API is deployed on Railway and uses GitHub Actions for continuous deployment.</p>
+    <a href="https://github.com/rafikawe/BEJS_fgabatch2_Muhamad-Rafi-Rahmat-Alghifari_Challenge-Chapter-6">Check Github Repo</a>
+  </div>
 </body>
 
 </html>
