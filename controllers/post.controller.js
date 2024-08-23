@@ -1,13 +1,12 @@
 const postService = require('../services/post.service');
 
 async function createPost(req, res) {
-    const image_file = req.file;
-	const {
-		title,
-		description
-	} = req.body;
-
 	try {
+		const image_file = req.file;
+		const {
+			title,
+			description
+		} = req.body;
 		const post = await postService.createPost(title, description, image_file);
 		res.status(201).json({
 			status: true,
@@ -43,10 +42,10 @@ async function getAllPosts(req, res) {
 	}
 }
 
-async function getOnePost(req, res) {
-	const id = req.params.id;
-
+async function getOnePost(req, res) {	
 	try {
+		const id = req.params.id;
+
 		const post = await postService.getOnePost(id);
 		res.status(200).json({
 			status: true,
@@ -64,14 +63,12 @@ async function getOnePost(req, res) {
 }
 
 async function deletePost(req, res) {
-	const id = req.params.id;
-
 	try {
+		const id = req.params.id;
 		const post = await postService.deletePost(id);
 		res.status(200).json({
 			status: true,
-			message: "Post deleted successfully",		
-			post: post
+			message: "Post deleted successfully"			
 		});
 	}
 	catch (err) {
@@ -84,12 +81,12 @@ async function deletePost(req, res) {
 }
 
 async function updatePost(req, res) {
-	const id = req.params.id;
-	const {
-		title,
-		description
-	} = req.body;
 	try {
+		const id = req.params.id;
+		const {
+			title,
+			description
+		} = req.body;
 		const post = await postService.updatePost(id, title, description);
 		res.status(200).json({
 			status: true,

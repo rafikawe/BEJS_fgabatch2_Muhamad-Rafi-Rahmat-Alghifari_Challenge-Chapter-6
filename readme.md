@@ -46,12 +46,4 @@ npx prisma migrate dev --name init
 
 ## API Documentation
 
-This repository contains the API documentation in Insomnia yaml format.
-
-### How to see the documentation in Insomnia
-
-1. Download the `docs/api-doc-insomnia`.
-2. Open Insomnia.
-3. Go to `Application` > `Preferences` > `Data` tab.
-4. Click on `Import Data` > `From File`.
-5. Select the downloaded JSON file.
+You can access the API documentation at [https://challenge6-production-a259.up.railway.app/api-docs](https://challenge6-production-a259.up.railway.app/api-docs)

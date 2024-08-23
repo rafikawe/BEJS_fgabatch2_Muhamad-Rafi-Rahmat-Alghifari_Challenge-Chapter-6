@@ -1,15 +1,15 @@
 require('dotenv').config();
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');  
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');  
+const swaggerDocs = require('./libs/swagger');
 
-
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
 const {errorHandler} = require('./middleware/error.handling');
 
-var app = express();
+const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -18,6 +18,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(cors());
+
+swaggerDocs(app);
 
 app.use('/api/v1', errorHandler, indexRouter);
 

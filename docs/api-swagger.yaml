@@ -1,0 +1,159 @@
+openapi: 3.0.3
+components:
+  schemas:
+    Post:
+      type: object
+      properties: 
+        id:
+          type: string
+          example: cm03zmt4o00012cs8ravvmakw
+        title:
+          type: string
+          example: coba
+        description:
+          type: string
+          example: coba
+        image_url:
+          type: string
+          example: link image
+        file_id:
+          type: string
+          example: id file image kit
+    CreatePostRequest:
+      type: object
+      properties:       
+        title:
+          type: string          
+        description:
+          type: string          
+        image:
+          type: file     
+    UpdatePostRequest:
+      type: object
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+    UpdatePostResponse:
+      type: object
+      properties:
+        status:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: Post updated successfully
+        data:
+          type: object
+          $ref: '#/components/schemas/Post'
+    PostResponse: 
+      type: object
+      properties:
+        status:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: Post created successfully
+        data:
+          type: object
+          $ref: '#/components/schemas/Post'
+paths:
+  /api/v1/post/create:
+    post:
+      summary: Create Post
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/CreatePostRequest'
+      responses:
+        201:
+          description: Post created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+  /api/v1/post/getAll:
+    get:
+      summary: Get All Posts
+      responses:
+        200:
+          description: Get all posts
+          content:
+            application/json:
+              properties:
+                status:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Posts fetched successfully
+                type: array
+                items:
+                  $ref: '#/components/schemas/Post'
+  /api/v1/post/getOne/{id}:
+    get:
+      summary: Get One Posts
+      parameters:
+        - name: id
+          in: path
+          description: Id of Post
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Get one posts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Post'
+  /api/v1/post/update/{id}:
+    put:
+      summary: Update Post
+      parameters:
+        - name: id
+          in: path
+          description: Id of Post
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePostRequest'
+      responses:
+        200:
+          description: Update Post
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdatePostResponse'
+  /api/v1/post/delete/{id}:
+    delete:
+      summary: Delete Post
+      parameters:
+        - name: id
+          in: path
+          description: Id of Post
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Delete Post
+          content:
+            application/json:
+              properties:
+                status:
+                  type: boolean
+                  example: true
+                message:
+                  type: string
+                  example: Post deleted successfully
+
