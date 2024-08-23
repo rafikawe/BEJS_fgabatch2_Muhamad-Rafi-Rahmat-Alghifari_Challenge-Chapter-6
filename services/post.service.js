@@ -53,11 +53,21 @@ async function deletePost(id){
     }
 }
 
+async function updatePost(id, title, description){
+    try{                
+        const post = await postModel.updatePost(id, title, description);
+        return post;
+    }catch(err){        
+        throw err;
+    }
+}
+
     
 
 module.exports = {
     createPost,
     getAllPosts,
     getOnePost,
-    deletePost
+    deletePost,
+    updatePost
 }

@@ -9,5 +9,6 @@ router.post('/create', imageCheck, postController.createPost);
 router.get('/getAll', postController.getAllPosts);
 router.get('/getOne/:id', postController.getOnePost);
 router.delete('/delete/:id', postController.deletePost);
+router.put('/update/:id', postController.updatePost);
 
 module.exports = router;

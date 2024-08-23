@@ -83,9 +83,33 @@ async function deletePost(req, res) {
 	}
 }
 
+async function updatePost(req, res) {
+	const id = req.params.id;
+	const {
+		title,
+		description
+	} = req.body;
+	try {
+		const post = await postService.updatePost(id, title, description);
+		res.status(200).json({
+			status: true,
+			message: "Post updated successfully",
+			data: post
+		});
+	}
+	catch (err) {
+		console.log(err);
+		res.status(500).json({
+			status: false,
+			message: "Something went wrong in server"
+		});
+	}
+}
+
 module.exports = {
     createPost,
 	getAllPosts,
 	getOnePost,
-	deletePost
+	deletePost,
+	updatePost
 }

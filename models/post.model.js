@@ -51,9 +51,27 @@ async function deletePost(id){
     }
 }
 
+async function updatePost(id, title, description){
+    try{
+        const post = await prisma.post.update({
+            where: {
+                id: id
+            },
+            data: {
+                title: title,
+                description: description,                
+            }
+        });
+        return post;
+    }catch(err){        
+        throw err;
+    }
+}
+
 module.exports = {
     createPost,
     getAllPosts,
     getOnePost,
-    deletePost
+    deletePost,
+    updatePost
 }
