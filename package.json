@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start:dev": "nodemon ./bin/www",
-    "start": "npx prisma generate && node ./bin/www && npm run sentry:sourcemaps",
-    "sentry:sourcemaps": "sentry-cli sourcemaps inject --org individual-fq --project node-express ./out && sentry-cli sourcemaps upload --org individual-fq --project node-express ./out"
+    "start": "npx prisma generate && node ./bin/www"    
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",
